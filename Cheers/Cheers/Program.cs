@@ -24,10 +24,10 @@ namespace Cheers
                         aOrAn = "an";
                     }
                 }
-                Console.WriteLine("Give me " + aOrAn + ".. " + letter);
+                Console.WriteLine("Give me " + aOrAn + "... " + letter);
             }
             name = name.ToUpper();
-            Console.WriteLine(name + " is.. GRAND!");
+            Console.WriteLine(name + "'s just GRAND!");
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
         }
