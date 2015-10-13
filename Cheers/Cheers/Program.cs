@@ -17,7 +17,7 @@ namespace Cheers
             foreach (char letter in name)
             {
                 string aOrAn = "a";
-                foreach (char nonvoiced in "aefhilmnorx")
+                foreach (char nonvoiced in "halfnorsemix")
                 {
                     if (letter == nonvoiced)
                     {
