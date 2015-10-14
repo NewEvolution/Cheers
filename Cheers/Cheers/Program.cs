@@ -12,7 +12,8 @@ namespace Cheers
         {
             Console.WriteLine("Hello there! What's your name?");
             string name = Console.ReadLine();
-            Console.WriteLine("Hi " + name);
+            Console.WriteLine("Hey, " + name + ", what’s your birthday ? (MM / DD)");
+            string birthday = Console.ReadLine();
             name = name.ToLower();
             foreach (char letter in name)
             {
