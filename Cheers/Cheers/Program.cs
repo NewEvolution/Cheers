@@ -10,6 +10,14 @@ namespace Cheers
     {
         static void Main(string[] args)
         {
+            string name = NameCheer();
+            BirthdayCheer(name);
+            Console.WriteLine("Press any key to exit.");
+            Console.ReadKey();
+        }
+
+        private static string NameCheer()
+        {
             Console.WriteLine("Hello there! What's your name?");
             string name = Console.ReadLine();
             foreach (char letter in name.ToLower())
@@ -28,9 +36,22 @@ namespace Cheers
                 }
             }
             Console.WriteLine(name.ToUpper() + "'s just GRAND!");
+            return name;
+        }
+
+        private static void BirthdayCheer(string name)
+        {
             Console.WriteLine("Hey, " + name + ", what’s your birthday ? (MM/DD)");
             string birthday = Console.ReadLine();
-            DateTime convertedBirthday = Convert.ToDateTime(birthday);
+            DateTime convertedBirthday;
+            try
+            {
+                convertedBirthday = Convert.ToDateTime(birthday);
+            }
+            catch
+            {
+                Console.WriteLine("That was not a valid birthday");
+            }
             DateTime today = DateTime.Today;
             if (convertedBirthday.Equals(today))
             {
@@ -45,8 +66,6 @@ namespace Cheers
                 Console.Write("Awesome! Your birthday is in " + convertedBirthday.Subtract(today).Days);
                 Console.WriteLine(" days! Happy Birthday in advance!");
             }
-            Console.WriteLine("Press any key to exit.");
-            Console.ReadKey();
         }
     }
 }
