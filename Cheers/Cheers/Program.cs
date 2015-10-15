@@ -14,7 +14,8 @@ namespace Cheers
             string name = Console.ReadLine();
             Console.WriteLine("Hey, " + name + ", what’s your birthday ? (MM/DD)");
             string birthday = Console.ReadLine();
-            DateTime convertedDate = Convert.ToDateTime(birthday);
+            DateTime convertedBirthday = Convert.ToDateTime(birthday);
+            DateTime today = DateTime.Today;
             foreach (char letter in name.ToLower())
             {
                 if (Char.IsLetter(letter))
@@ -31,7 +32,18 @@ namespace Cheers
                 }
             }
             Console.WriteLine(name.ToUpper() + "'s just GRAND!");
-            Console.WriteLine(convertedDate);
+            if (convertedBirthday.Equals(today))
+            {
+                Console.WriteLine("Happy Birthday!!");
+            }
+            else
+            {
+                if (convertedBirthday < today)
+                {
+                    convertedBirthday = convertedBirthday.AddYears(1);
+                }
+                Console.WriteLine("Awesome! Your birthday is in " + convertedBirthday.Subtract(today).Days + " days! Happy Birthday in advance!");
+            }
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
         }
