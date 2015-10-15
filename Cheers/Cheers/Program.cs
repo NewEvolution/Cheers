@@ -42,7 +42,8 @@ namespace Cheers
                 {
                     convertedBirthday = convertedBirthday.AddYears(1);
                 }
-                Console.WriteLine("Awesome! Your birthday is in " + convertedBirthday.Subtract(today).Days + " days! Happy Birthday in advance!");
+                Console.Write("Awesome! Your birthday is in " + convertedBirthday.Subtract(today).Days);
+                Console.WriteLine(" days! Happy Birthday in advance!");
             }
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
