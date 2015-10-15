@@ -12,10 +12,9 @@ namespace Cheers
         {
             Console.WriteLine("Hello there! What's your name?");
             string name = Console.ReadLine();
-            Console.WriteLine("Hey, " + name + ", what’s your birthday ? (MM / DD)");
+            Console.WriteLine("Hey, " + name + ", what’s your birthday ? (MM/DD)");
             string birthday = Console.ReadLine();
-            name = name.ToLower();
-            foreach (char letter in name)
+            foreach (char letter in name.ToLower())
             {
                 string aOrAn = "a";
                 foreach (char nonvoiced in "halfnorsemix")
@@ -27,8 +26,7 @@ namespace Cheers
                 }
                 Console.WriteLine("Give me " + aOrAn + "... " + letter);
             }
-            name = name.ToUpper();
-            Console.WriteLine(name + "'s just GRAND!");
+            Console.WriteLine(name.ToUpper() + "'s just GRAND!");
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
         }
