@@ -25,7 +25,10 @@ namespace Cheers
                         aOrAn = "an... ";
                     }
                 }
-                Console.WriteLine("Give me " + aOrAn + letter);
+                if (Char.IsLetter(letter))
+                {
+                    Console.WriteLine("Give me " + aOrAn + letter);
+                }
             }
             Console.WriteLine(name.ToUpper() + "'s just GRAND!");
             Console.WriteLine(convertedDate);
