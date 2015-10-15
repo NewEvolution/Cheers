@@ -17,16 +17,16 @@ namespace Cheers
             DateTime convertedDate = Convert.ToDateTime(birthday);
             foreach (char letter in name.ToLower())
             {
-                string aOrAn = "a...  ";
-                foreach (char nonvoiced in "halfnorsemix")
-                {
-                    if (letter == nonvoiced)
-                    {
-                        aOrAn = "an... ";
-                    }
-                }
                 if (Char.IsLetter(letter))
                 {
+                    string aOrAn = "a...  ";
+                    foreach (char nonvoiced in "halfnorsemix")
+                    {
+                        if (letter == nonvoiced)
+                        {
+                            aOrAn = "an... ";
+                        }
+                    }
                     Console.WriteLine("Give me " + aOrAn + letter);
                 }
             }
