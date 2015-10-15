@@ -41,17 +41,8 @@ namespace Cheers
 
         private static void BirthdayCheer(string name)
         {
-            Console.WriteLine("Hey, " + name + ", what’s your birthday ? (MM/DD)");
-            string birthday = Console.ReadLine();
             DateTime convertedBirthday;
-            try
-            {
-                convertedBirthday = Convert.ToDateTime(birthday);
-            }
-            catch
-            {
-                Console.WriteLine("That was not a valid birthday");
-            }
+            convertedBirthday = GetBirthday(name);
             DateTime today = DateTime.Today;
             if (convertedBirthday.Equals(today))
             {
@@ -65,6 +56,23 @@ namespace Cheers
                 }
                 Console.Write("Awesome! Your birthday is in " + convertedBirthday.Subtract(today).Days);
                 Console.WriteLine(" days! Happy Birthday in advance!");
+            }
+        }
+
+        private static DateTime GetBirthday(string name)
+        {
+            DateTime convertedBirthday;
+            try
+            {
+                Console.WriteLine("Hey, " + name + ", what’s your birthday ? (MM/DD)");
+                string birthday = Console.ReadLine();
+                convertedBirthday = Convert.ToDateTime(birthday);
+                return convertedBirthday;
+            }
+            catch
+            {
+                Console.WriteLine("That was not a valid birthday");
+                return GetBirthday(name);
             }
         }
     }
