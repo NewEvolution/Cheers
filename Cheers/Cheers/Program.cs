@@ -61,12 +61,11 @@ namespace Cheers
 
         private static DateTime GetBirthday(string name)
         {
-            DateTime convertedBirthday;
+            Console.WriteLine("Hey, " + name + ", what’s your birthday ? (MM/DD)");
+            string birthday = Console.ReadLine();
             try
             {
-                Console.WriteLine("Hey, " + name + ", what’s your birthday ? (MM/DD)");
-                string birthday = Console.ReadLine();
-                convertedBirthday = Convert.ToDateTime(birthday);
+                DateTime convertedBirthday = Convert.ToDateTime(birthday);
                 return convertedBirthday;
             }
             catch
